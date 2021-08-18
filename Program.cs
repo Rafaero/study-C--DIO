@@ -6,39 +6,41 @@ namespace DigitalInnovationOne
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Escolha uma opção:");
-            Console.WriteLine("1 - Adicionar um aluno");
-            Console.WriteLine("2- Remover um aluno");
-            Console.WriteLine("3- Calcular média");
-            Console.WriteLine("X - Sair");
+            string opcaoUsuario = ObterOpcaoUsuario();
 
-            string opcaoUsuario = Console.ReadLine(); 
+            while (opcaoUsuario.ToUpper() != "X")
+            {
 
-            while(opcaoUsuario.ToUpper() != "X"){
-                
-                switch(opcaoUsuario){
+                switch (opcaoUsuario)
+                {
 
                     case "1":
-                    break;
+                        break;
 
                     case "2":
-                    break;
+                        break;
 
                     case "3":
-                    break;
+                        break;
 
                     default:
-                    throw new ArgumentOutOfRangeException();
+                        throw new ArgumentOutOfRangeException();
                 }
 
+                opcaoUsuario = ObterOpcaoUsuario();
+            }
+        }
+
+        private static string ObterOpcaoUsuario()
+        {
             Console.WriteLine("Escolha uma opção:");
             Console.WriteLine("1 - Adicionar um aluno");
             Console.WriteLine("2- Remover um aluno");
             Console.WriteLine("3- Calcular média");
             Console.WriteLine("X - Sair");
 
-            opcaoUsuario = Console.ReadLine(); 
-            }
+            string opcaoUsuario = Console.ReadLine();
+            return opcaoUsuario;
         }
     }
 }
